@@ -1,4 +1,4 @@
-# Single-Page CV
+# Personal Portfolio
 
 Solution to [roadmap.sh's personal portfolio project](https://roadmap.sh/projects/basic-html-website).
 

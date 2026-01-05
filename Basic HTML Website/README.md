@@ -1,4 +1,4 @@
-# Single-Page CV
+# Basic HTML Website
 
 Solution to [roadmap.sh's basic HTML website project](https://roadmap.sh/projects/basic-html-website).
 
