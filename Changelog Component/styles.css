@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.changelog-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+}
+
+.changelog-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.changelog-header h1 {
+    font-size: 2rem;
+    color: #1a202c;
+    margin-bottom: 8px;
+}
+
+.changelog-header p {
+    font-size: 1rem;
+    color: #718096;
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e2e8f0;
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px; 
+    height: 24px;
+    background: white;
+    border: 3px solid #667eea;
+    border-radius: 50%;
+    z-index: 1; 
+}
+
+.timeline-dot::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #667eea;
+    border-radius: 50%;
+}
+
+.timeline-content {
+    flex: 1; 
+    padding-left: 40px; 
+    text-align: left;
+    font-size: 0.95rem;
+    color: #2d3748;
+    line-height: 1.5;
+}
+
+.timeline-date {
+    flex: 1;
+    text-align: right;
+    padding-right: 40px;
+    font-size: 0.875rem;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.changelog-button {
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+}
+
+.changelog-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.changelog-button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+    /* Reset line to left side */
+    .timeline::before {
+        left: 20px;
+        transform: none;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 50px; /* Make room for the dot on the left */
+        position: relative;
+    }
+
+    /* Move dot to left */
+    .timeline-dot {
+        left: 20px;
+        transform: translateX(-50%);
+        top: 0;
+    }
+
+    /* Stack date and content */
+    .timeline-date {
+        text-align: left;
+        padding-right: 0;
+        margin-bottom: 4px;
+        width: 100%;
+    }
+
+    .timeline-content {
+        padding-left: 0;
+        width: 100%;
+    }
+}
